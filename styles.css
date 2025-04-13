@@ -1614,9 +1614,13 @@ section h2::after {
 
 
 footer {
-    background-color: var(--darker-bg);
-    padding: 60px 0 20px;
-    border-top: 1px solid var(--border-color);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('images/backgrounds/Elden-Ring-Logo-removebg-preview.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--light-text);
+    padding: 60px 0 30px;
+    position: relative;
 }
 
 .footer-content {
