@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <!-- Site of Grace Marker -->
+    <symbol id="grace" viewBox="0 0 24 24">
+        <path d="M12 2L8 6H16L12 2Z" fill="#ffd700"/>
+        <circle cx="12" cy="12" r="4" fill="#ffd700"/>
+        <path d="M12 16V22" stroke="#ffd700" stroke-width="2"/>
+    </symbol>
+
+    <!-- Merchant Marker -->
+    <symbol id="merchant" viewBox="0 0 24 24">
+        <path d="M12 2L8 6H16L12 2Z" fill="#4caf50"/>
+        <circle cx="12" cy="12" r="4" fill="#4caf50"/>
+        <path d="M8 16H16" stroke="#4caf50" stroke-width="2"/>
+    </symbol>
+
+    <!-- Boss Marker -->
+    <symbol id="boss" viewBox="0 0 24 24">
+        <path d="M12 2L8 6H16L12 2Z" fill="#c41e3a"/>
+        <circle cx="12" cy="12" r="4" fill="#c41e3a"/>
+        <path d="M9 16L12 19L15 16" stroke="#c41e3a" stroke-width="2"/>
+    </symbol>
+
+    <!-- Dungeon Marker -->
+    <symbol id="dungeon" viewBox="0 0 24 24">
+        <path d="M12 2L8 6H16L12 2Z" fill="#2196f3"/>
+        <rect x="8" y="8" width="8" height="8" fill="#2196f3"/>
+        <path d="M8 16H16" stroke="#2196f3" stroke-width="2"/>
+    </symbol>
+
+    <!-- Item Marker -->
+    <symbol id="item" viewBox="0 0 24 24">
+        <path d="M12 2L8 6H16L12 2Z" fill="#9c27b0"/>
+        <circle cx="12" cy="12" r="4" fill="#9c27b0"/>
+        <path d="M10 16L12 14L14 16" stroke="#9c27b0" stroke-width="2"/>
+    </symbol>
+</svg> 

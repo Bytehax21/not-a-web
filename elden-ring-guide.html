@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Ring Guide - Your Complete Tarnished Companion</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="elden-ring-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/logos/heaven-ascended-nwah-elden-ring-logo-removebg-preview.png" alt="Elden Ring Logo">
+            <span>Elden Ring Guide</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#weapons">Weapons</a></li>
+            <li><a href="#armor">Armor</a></li>
+            <li><a href="#bosses">Bosses</a></li>
+            <li><a href="#npcs">NPCs</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#underground">Underground</a></li>
+            <li><a href="#beginners">Beginner's Guide</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <button class="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="images/backgrounds/elden-ring-header-animated.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Elden Ring Guide</h1>
+            <p class="subtitle">Your complete companion for exploring the Lands Between</p>
+            <div class="hero-buttons">
+                <a href="#map" class="cta-button">Explore Map</a>
+                <a href="#beginners" class="cta-button secondary">Beginner's Guide</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-nav">
+        <div class="container">
+            <h2>Quick Navigation</h2>
+            <div class="quick-nav-grid">
+                <div class="quick-nav-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Weapons</h3>
+                    <p>Discover and master the best weapons in the game</p>
+                </div>
+                <div class="quick-nav-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Armor</h3>
+                    <p>Find the perfect armor sets for your build</p>
+                </div>
+                <div class="quick-nav-card">
+                    <i class="fas fa-skull"></i>
+                    <h3>Bosses</h3>
+                    <p>Learn strategies to defeat every boss</p>
+                </div>
+                <div class="quick-nav-card">
+                    <i class="fas fa-users"></i>
+                    <h3>NPCs</h3>
+                    <p>Meet the characters and complete their quests</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="weapons" class="section">
+        <div class="container">
+            <h2 class="section-title">Legendary Weapons</h2>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All Weapons</button>
+                <button class="filter-btn" data-filter="katana">Katanas</button>
+                <button class="filter-btn" data-filter="greatsword">Greatswords</button>
+                <button class="filter-btn" data-filter="special">Special</button>
+            </div>
+            <div class="weapons-grid">
+                <div class="weapon-card" data-category="katana" data-weapon-id="uchigatana">
+                    <div class="weapon-image">
+                        <img src="images/weapons/ER_Icon_weapon_Uchigatana.jpg" alt="Uchigatana" loading="lazy">
+                    </div>
+                    <div class="weapon-info">
+                        <h3>Uchigatana <span class="japanese-name">打刀</span></h3>
+                        <div class="weapon-stats">
+                            <div class="stat">
+                                <span class="stat-label">Physical</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 57.5%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-details">
+                            <p><strong>Type:</strong> Katana</p>
+                            <p><strong>Weight:</strong> 5.5</p>
+                            <p><strong>Requirements:</strong> 11 STR, 15 DEX</p>
+                            <p><strong>Location:</strong> Starting weapon for Samurai class</p>
+                        </div>
+                        <p class="weapon-description">A katana with a long single-edged curved blade. A unique weapon wielded by the samurai from the Land of Reeds.</p>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <div class="weapon-card" data-category="katana" data-weapon-id="rivers-of-blood">
+                    <div class="weapon-image">
+                        <img src="images/weapons/ER_Icon_weapon_Rivers_of_Blood.jpg" alt="Rivers of Blood" loading="lazy">
+                    </div>
+                    <div class="weapon-info">
+                        <h3>Rivers of Blood <span class="japanese-name">屍山血河</span></h3>
+                        <div class="weapon-stats">
+                            <div class="stat">
+                                <span class="stat-label">Physical</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 38%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Fire</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 38%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-details">
+                            <p><strong>Type:</strong> Katana</p>
+                            <p><strong>Weight:</strong> 6.5</p>
+                            <p><strong>Requirements:</strong> 12 STR, 18 DEX, 20 ARC</p>
+                            <p><strong>Location:</strong> Mountaintops of the Giants</p>
+                        </div>
+                        <p class="weapon-description">Weapon of Okina, swordsman from the Land of Reeds. A cursed weapon that has felled countless men.</p>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <div class="weapon-card" data-category="greatsword" data-weapon-id="dark-moon-greatsword">
+                    <div class="weapon-image">
+                        <img src="images/weapons/ER_Icon_weapon_Dark_Moon_Greatsword.jpg" alt="Dark Moon Greatsword" loading="lazy">
+                    </div>
+                    <div class="weapon-info">
+                        <h3>Dark Moon Greatsword</h3>
+                        <div class="weapon-stats">
+                            <div class="stat">
+                                <span class="stat-label">Physical</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 41%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Magic</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 39%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-details">
+                            <p><strong>Type:</strong> Greatsword</p>
+                            <p><strong>Weight:</strong> 10.0</p>
+                            <p><strong>Requirements:</strong> 16 STR, 11 DEX, 38 INT</p>
+                            <p><strong>Location:</strong> Ranni's Questline</p>
+                        </div>
+                        <p class="weapon-description">A Moonlight Greatsword, bestowed upon them by Lunar Princess Ranni. The blade is imbued with the power of the full moon.</p>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Sword of Night and Flame -->
+                <div class="weapon-card" data-category="special">
+                    <div class="weapon-image">
+                        <img src="images/weapons/ER_Icon_weapon_Sword_of_Night_and_Flame.jpg" alt="Sword of Night and Flame" loading="lazy">
+                    </div>
+                    <div class="weapon-info">
+                        <h3>Sword of Night and Flame <span class="japanese-name">夜と炎の剣</span></h3>
+                        <div class="weapon-stats">
+                            <div class="stat">
+                                <span class="stat-label">Physical</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Magic/Fire</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-details">
+                            <p><strong>Type:</strong> Straight Sword</p>
+                            <p><strong>Weight:</strong> 4.0</p>
+                            <p><strong>Requirements:</strong> 12 STR, 12 DEX, 24 INT, 24 FAI</p>
+                            <p><strong>Location:</strong> Caria Manor</p>
+                        </div>
+                        <p class="weapon-description">A legendary sword of the Carian royal family. The blade is imbued with both night and flame, allowing for powerful magical attacks.</p>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Blasphemous Blade -->
+                <div class="weapon-card" data-category="special">
+                    <div class="weapon-image">
+                        <img src="images/weapons/ER_Icon_weapon_Blasphemous_Blade.jpg" alt="Blasphemous Blade" loading="lazy">
+                    </div>
+                    <div class="weapon-info">
+                        <h3>Blasphemous Blade <span class="japanese-name">冒涜の剣</span></h3>
+                        <div class="weapon-stats">
+                            <div class="stat">
+                                <span class="stat-label">Physical</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Fire</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weapon-details">
+                            <p><strong>Type:</strong> Greatsword</p>
+                            <p><strong>Weight:</strong> 13.0</p>
+                            <p><strong>Requirements:</strong> 22 STR, 15 DEX, 21 FAI</p>
+                            <p><strong>Location:</strong> Rykard's Remembrance</p>
+                        </div>
+                        <p class="weapon-description">A greatsword that was once wielded by the Lord of Blasphemy. The blade is imbued with the power of the God-Devouring Serpent.</p>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="armor" class="armor">
+        <div class="container">
+            <h2>Armor Sets</h2>
+            <div class="armor-grid">
+                <!-- Bull-Goat Set -->
+                <div class="armor-card" data-type="heavy">
+                    <div class="armor-image">
+                        <img src="images/armor/bull-goat-armor-set-in-elden-ring.jpeg" alt="Bull-Goat Armor Set">
+                    </div>
+                    <div class="armor-info">
+                        <div class="armor-header">
+                            <h3>Bull-Goat Armor Set</h3>
+                            <span class="armor-type">Heavy</span>
+                        </div>
+                        <div class="armor-stats">
+                            <div class="stat-group">
+                                <div class="weight-poise">
+                                    <span>Total Weight: 63.1</span>
+                                    <span>Poise: 100</span>
+                                </div>
+                                <div class="defense-stats">
+                                    <h4>Defense Stats</h4>
+                                    <div class="stat-grid">
+                                        <div class="stat"><span>Physical</span><div class="stat-bar"><div class="stat-fill" style="width: 95%"></div></div></div>
+                                        <div class="stat"><span>Strike</span><div class="stat-bar"><div class="stat-fill" style="width: 92%"></div></div></div>
+                                        <div class="stat"><span>Slash</span><div class="stat-bar"><div class="stat-fill" style="width: 90%"></div></div></div>
+                                        <div class="stat"><span>Pierce</span><div class="stat-bar"><div class="stat-fill" style="width: 88%"></div></div></div>
+                                        <div class="stat"><span>Magic</span><div class="stat-bar"><div class="stat-fill" style="width: 65%"></div></div></div>
+                                        <div class="stat"><span>Fire</span><div class="stat-bar"><div class="stat-fill" style="width: 70%"></div></div></div>
+                                        <div class="stat"><span>Lightning</span><div class="stat-bar"><div class="stat-fill" style="width: 60%"></div></div></div>
+                                        <div class="stat"><span>Holy</span><div class="stat-bar"><div class="stat-fill" style="width: 65%"></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="armor-details">
+                            <div class="obtain-info">
+                                <h4>How to Obtain</h4>
+                                <p>Complete Patches' questline and defeat Great Horned Tragoth in Mt. Gelmir.</p>
+                            </div>
+                            <div class="recommended-for">
+                                <h4>Recommended For</h4>
+                                <p>Tank builds, Poise-focused builds, Heavy weapon users</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cleanrot Set -->
+                <div class="armor-card" data-type="medium">
+                    <div class="armor-image">
+                        <img src="images/armor/cleanrot-set-bg.png" alt="Cleanrot Knight Set">
+                    </div>
+                    <div class="armor-info">
+                        <div class="armor-header">
+                            <h3>Cleanrot Knight Set</h3>
+                            <span class="armor-type">Medium</span>
+                        </div>
+                        <div class="armor-stats">
+                            <div class="stat-group">
+                                <div class="weight-poise">
+                                    <span>Total Weight: 35.2</span>
+                                    <span>Poise: 45</span>
+                                </div>
+                                <div class="defense-stats">
+                                    <h4>Defense Stats</h4>
+                                    <div class="stat-grid">
+                                        <div class="stat"><span>Physical</span><div class="stat-bar"><div class="stat-fill" style="width: 75%"></div></div></div>
+                                        <div class="stat"><span>Strike</span><div class="stat-bar"><div class="stat-fill" style="width: 72%"></div></div></div>
+                                        <div class="stat"><span>Slash</span><div class="stat-bar"><div class="stat-fill" style="width: 78%"></div></div></div>
+                                        <div class="stat"><span>Pierce</span><div class="stat-bar"><div class="stat-fill" style="width: 74%"></div></div></div>
+                                        <div class="stat"><span>Magic</span><div class="stat-bar"><div class="stat-fill" style="width: 55%"></div></div></div>
+                                        <div class="stat"><span>Fire</span><div class="stat-bar"><div class="stat-fill" style="width: 80%"></div></div></div>
+                                        <div class="stat"><span>Lightning</span><div class="stat-bar"><div class="stat-fill" style="width: 50%"></div></div></div>
+                                        <div class="stat"><span>Holy</span><div class="stat-bar"><div class="stat-fill" style="width: 85%"></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="armor-details">
+                            <div class="obtain-info">
+                                <h4>How to Obtain</h4>
+                                <p>Farm Cleanrot Knights in Caelid or Aeonia Swamp. Rare drop from these enemies.</p>
+                            </div>
+                            <div class="recommended-for">
+                                <h4>Recommended For</h4>
+                                <p>Faith builds, Holy resistance builds, Balanced protection seekers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blaidd's Set -->
+                <div class="armor-card" data-type="medium">
+                    <div class="armor-image">
+                        <img src="images/armor/blaidd-set.jpeg" alt="Blaidd's Set">
+                    </div>
+                    <div class="armor-info">
+                        <div class="armor-header">
+                            <h3>Blaidd's Set</h3>
+                            <span class="armor-type">Medium</span>
+                        </div>
+                        <div class="armor-stats">
+                            <div class="stat-group">
+                                <div class="weight-poise">
+                                    <span>Total Weight: 39.3</span>
+                                    <span>Poise: 53</span>
+                                </div>
+                                <div class="defense-stats">
+                                    <h4>Defense Stats</h4>
+                                    <div class="stat-grid">
+                                        <div class="stat"><span>Physical</span><div class="stat-bar"><div class="stat-fill" style="width: 82%"></div></div></div>
+                                        <div class="stat"><span>Strike</span><div class="stat-bar"><div class="stat-fill" style="width: 80%"></div></div></div>
+                                        <div class="stat"><span>Slash</span><div class="stat-bar"><div class="stat-fill" style="width: 85%"></div></div></div>
+                                        <div class="stat"><span>Pierce</span><div class="stat-bar"><div class="stat-fill" style="width: 78%"></div></div></div>
+                                        <div class="stat"><span>Magic</span><div class="stat-bar"><div class="stat-fill" style="width: 45%"></div></div></div>
+                                        <div class="stat"><span>Fire</span><div class="stat-bar"><div class="stat-fill" style="width: 65%"></div></div></div>
+                                        <div class="stat"><span>Lightning</span><div class="stat-bar"><div class="stat-fill" style="width: 40%"></div></div></div>
+                                        <div class="stat"><span>Holy</span><div class="stat-bar"><div class="stat-fill" style="width: 50%"></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="armor-details">
+                            <div class="obtain-info">
+                                <h4>How to Obtain</h4>
+                                <p>Complete Ranni's questline and defeat Blaidd at Ranni's Rise.</p>
+                            </div>
+                            <div class="recommended-for">
+                                <h4>Recommended For</h4>
+                                <p>Quality builds, Fashion souls, Strength/Dex hybrid builds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crucible Tree Set -->
+                <div class="armor-card" data-type="heavy">
+                    <div class="armor-image">
+                        <img src="images/armor/crucible-tree-set.jpeg" alt="Crucible Tree Set">
+                    </div>
+                    <div class="armor-info">
+                        <div class="armor-header">
+                            <h3>Crucible Tree Set</h3>
+                            <span class="armor-type">Heavy</span>
+                        </div>
+                        <div class="armor-stats">
+                            <div class="stat-group">
+                                <div class="weight-poise">
+                                    <span>Total Weight: 47.8</span>
+                                    <span>Poise: 76</span>
+                                </div>
+                                <div class="defense-stats">
+                                    <h4>Defense Stats</h4>
+                                    <div class="stat-grid">
+                                        <div class="stat"><span>Physical</span><div class="stat-bar"><div class="stat-fill" style="width: 88%"></div></div></div>
+                                        <div class="stat"><span>Strike</span><div class="stat-bar"><div class="stat-fill" style="width: 85%"></div></div></div>
+                                        <div class="stat"><span>Slash</span><div class="stat-bar"><div class="stat-fill" style="width: 87%"></div></div></div>
+                                        <div class="stat"><span>Pierce</span><div class="stat-bar"><div class="stat-fill" style="width: 84%"></div></div></div>
+                                        <div class="stat"><span>Magic</span><div class="stat-bar"><div class="stat-fill" style="width: 60%"></div></div></div>
+                                        <div class="stat"><span>Fire</span><div class="stat-bar"><div class="stat-fill" style="width: 75%"></div></div></div>
+                                        <div class="stat"><span>Lightning</span><div class="stat-bar"><div class="stat-fill" style="width: 55%"></div></div></div>
+                                        <div class="stat"><span>Holy</span><div class="stat-bar"><div class="stat-fill" style="width: 80%"></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="armor-details">
+                            <div class="obtain-info">
+                                <h4>How to Obtain</h4>
+                                <p>Defeat the Crucible Knight in Deeproot Depths, near the Great Waterfall Crest.</p>
+                            </div>
+                            <div class="recommended-for">
+                                <h4>Recommended For</h4>
+                                <p>Tank builds, Faith/Strength builds, Holy damage focused builds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Raging Wolf Set -->
+                <div class="armor-card" data-type="medium">
+                    <div class="armor-image">
+                        <img src="images/armor/Raging-wolf.jpg" alt="Raging Wolf Set">
+                    </div>
+                    <div class="armor-info">
+                        <div class="armor-header">
+                            <h3>Raging Wolf Set</h3>
+                            <span class="armor-type">Medium</span>
+                        </div>
+                        <div class="armor-stats">
+                            <div class="stat-group">
+                                <div class="weight-poise">
+                                    <span>Total Weight: 31.8</span>
+                                    <span>Poise: 37</span>
+                                </div>
+                                <div class="defense-stats">
+                                    <h4>Defense Stats</h4>
+                                    <div class="stat-grid">
+                                        <div class="stat"><span>Physical</span><div class="stat-bar"><div class="stat-fill" style="width: 70%"></div></div></div>
+                                        <div class="stat"><span>Strike</span><div class="stat-bar"><div class="stat-fill" style="width: 68%"></div></div></div>
+                                        <div class="stat"><span>Slash</span><div class="stat-bar"><div class="stat-fill" style="width: 72%"></div></div></div>
+                                        <div class="stat"><span>Pierce</span><div class="stat-bar"><div class="stat-fill" style="width: 69%"></div></div></div>
+                                        <div class="stat"><span>Magic</span><div class="stat-bar"><div class="stat-fill" style="width: 50%"></div></div></div>
+                                        <div class="stat"><span>Fire</span><div class="stat-bar"><div class="stat-fill" style="width: 55%"></div></div></div>
+                                        <div class="stat"><span>Lightning</span><div class="stat-bar"><div class="stat-fill" style="width: 45%"></div></div></div>
+                                        <div class="stat"><span>Holy</span><div class="stat-bar"><div class="stat-fill" style="width: 48%"></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="armor-details">
+                            <div class="obtain-info">
+                                <h4>How to Obtain</h4>
+                                <p>Complete Volcano Manor questline and defeat Raging Wolf in Leyndell, Royal Capital.</p>
+                            </div>
+                            <div class="recommended-for">
+                                <h4>Recommended For</h4>
+                                <p>Dexterity builds, Fashion souls, PvP enthusiasts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bosses" class="section">
+        <div class="container">
+            <h2 class="section-title">Main Bosses</h2>
+            <p class="section-description">These are the essential bosses you must defeat to complete Elden Ring. Each one presents a unique challenge and rewards you with Great Runes and progression through the main story.</p>
+            
+            <div class="bosses-grid">
+                <!-- Godrick -->
+                <div class="boss-card" data-boss-id="godrick">
+                    <div class="boss-image">
+                        <img src="images/bosses/ER_Godrick_the_Grafted.jpg" alt="Godrick the Grafted" loading="lazy">
+                    </div>
+                    <div class="boss-info">
+                        <h3>Godrick the Grafted</h3>
+                        <div class="boss-details">
+                            <p><strong>Location:</strong> Stormveil Castle</p>
+                            <p><strong>Health:</strong> 6,080</p>
+                            <p><strong>Rewards:</strong> Godrick's Great Rune, Remembrance of the Grafted</p>
+                        </div>
+                        <div class="boss-strategy">
+                            <h4>Strategy</h4>
+                            <p>Godrick is the first Shardbearer you'll face. He's weak to fire and can be staggered. His second phase adds a dragon head to his arm, increasing his attack range. Stay mobile and attack when he's vulnerable.</p>
+                        </div>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Rennala -->
+                <div class="boss-card" data-boss-id="rennala">
+                    <div class="boss-image">
+                        <img src="images/bosses/Queen_Rennala.jpg" alt="Rennala, Queen of the Full Moon" loading="lazy">
+                    </div>
+                    <div class="boss-info">
+                        <h3>Rennala, Queen of the Full Moon</h3>
+                        <div class="boss-details">
+                            <p><strong>Location:</strong> Raya Lucaria Academy</p>
+                            <p><strong>Health:</strong> 3,000 (Phase 1), 4,000 (Phase 2)</p>
+                            <p><strong>Rewards:</strong> Great Rune of the Unborn, Remembrance of the Full Moon Queen</p>
+                        </div>
+                        <div class="boss-strategy">
+                            <h4>Strategy</h4>
+                            <p>In phase one, destroy the glowing students to break her shield. In phase two, she becomes more aggressive with magic attacks. Close the distance and be aggressive to interrupt her spellcasting.</p>
+                        </div>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Radahnny -->
+                <div class="boss-card" data-boss-id="radahn">
+                    <div class="boss-image">
+                        <img src="images/bosses/ER_Starscourge_Radahn.jpg" alt="Radahn, Starscourge" loading="lazy">
+                    </div>
+                    <div class="boss-info">
+                        <h3>Starscourge Radahn</h3>
+                        <div class="boss-details">
+                            <p><strong>Location:</strong> Caelid - Redmane Castle</p>
+                            <p><strong>Type:</strong> Demigod Boss</p>
+                            <p><strong>Runes:</strong> 70,000</p>
+                        </div>
+                        <div class="boss-weapons">
+                            <h4><i class="fas fa-sword"></i>Weapons</h4>
+                            <ul class="weapon-list">
+                                <li>Dual Starscourge Greatswords</li>
+                                <li>Gravity Magic Bow</li>
+                                <li>Leonard (His loyal steed)</li>
+                            </ul>
+                        </div>
+                        <div class="boss-abilities">
+                            <h4><i class="fas fa-fire"></i>Abilities</h4>
+                            <ul class="ability-list">
+                                <li>Gravity Magic
+                                    <div class="ability-description">Controls gravity to pull meteors from the sky and manipulate the battlefield</div>
+                                </li>
+                                <li>Meteor Dive
+                                    <div class="ability-description">Launches into the sky and crashes down like a meteor</div>
+                                </li>
+                                <li>Ground Slam
+                                    <div class="ability-description">Creates shockwaves that deal massive AoE damage</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Rykard -->
+                <div class="boss-card" data-boss-id="rykard">
+                    <div class="boss-image">
+                        <img src="images/bosses/ER_Rykard_Lord_of_Blasphemy.jpg" alt="Rykard, Lord of Blasphemy" loading="lazy">
+                    </div>
+                    <div class="boss-info">
+                        <h3>Rykard, Lord of Blasphemy</h3>
+                        <div class="boss-details">
+                            <p><strong>Location:</strong> Volcano Manor</p>
+                            <p><strong>Health:</strong> 14,667</p>
+                            <p><strong>Rewards:</strong> Rykard's Great Rune, Remembrance of the Blasphemous</p>
+                        </div>
+                        <div class="boss-strategy">
+                            <h4>Strategy</h4>
+                            <p>Use the Serpent-Hunter spear found in the arena. This weapon deals massive damage to Rykard. Stay at medium range and use the weapon's special attack to break his poise.</p>
+                        </div>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Morgott-->
+                <div class="boss-card" data-boss-id="morgott">
+                    <div class="boss-image">
+                        <img src="images/bosses/Morgott.jpg" alt="Morgott, the Omen King" loading="lazy">
+                    </div>
+                    <div class="boss-info">
+                        <h3>Morgott, the Omen King</h3>
+                        <div class="boss-details">
+                            <p><strong>Location:</strong> Leyndell, Royal Capital</p>
+                            <p><strong>Type:</strong> Demigod Boss</p>
+                            <p><strong>Runes:</strong> 120,000</p>
+                        </div>
+                        <div class="boss-weapons">
+                            <h4><i class="fas fa-sword"></i>Weapons</h4>
+                            <ul class="weapon-list">
+                                <li>Morgott's Cursed Sword</li>
+                                <li>Holy Spear of Light</li>
+                                <li>Cursed Blood Daggers</li>
+                            </ul>
+                        </div>
+                        <div class="boss-abilities">
+                            <h4><i class="fas fa-fire"></i>Abilities</h4>
+                            <ul class="ability-list">
+                                <li>Cursed Blood Weapons
+                                    <div class="ability-description">Conjures various weapons made of cursed blood</div>
+                                </li>
+                                <li>Holy Spear Rain
+                                    <div class="ability-description">Summons multiple spears of light from the sky</div>
+                                </li>
+                                <li>Hammer of Justice
+                                    <div class="ability-description">Creates a massive hammer for devastating AoE attacks</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <!--Giant -->
+                <div class="boss-card" data-boss-id="fire-giant">
+                    <div class="boss-image">
+                        <img src="images/bosses/ER_Fire_Giant.jpg" alt="Fire Giant" loading="lazy">
+                    </div>
+                    <div class="boss-info">
+                        <h3>Fire Giant</h3>
+                        <div class="boss-details">
+                            <p><strong>Location:</strong> Mountaintops of the Giants</p>
+                            <p><strong>Health:</strong> 42,000</p>
+                            <p><strong>Rewards:</strong> Remembrance of the Fire Giant</p>
+                        </div>
+                        <div class="boss-strategy">
+                            <h4>Strategy</h4>
+                            <p>The Fire Giant has the highest health pool in the game. In phase one, attack his left ankle. In phase two, focus on his hands and head. Use Torrent for mobility.</p>
+                        </div>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Maliketh -->
+                <div class="boss-card" data-boss-id="maliketh">
+                    <div class="boss-image">
+                        <img src="images/bosses/ER_Maliketh_the_Black_Blade.jpg" alt="Maliketh, the Black Blade" loading="lazy">
+                    </div>
+                    <div class="boss-info">
+                        <h3>Maliketh, the Black Blade</h3>
+                        <div class="boss-details">
+                            <p><strong>Location:</strong> Crumbling Farum Azula</p>
+                            <p><strong>Health:</strong> 10,620</p>
+                            <p><strong>Rewards:</strong> Remembrance of the Black Blade</p>
+                        </div>
+                        <div class="boss-strategy">
+                            <h4>Strategy</h4>
+                            <p>Maliketh is extremely fast and deals high damage. His attacks reduce your max health. Use the Blasphemous Claw to parry his destined death attacks. Stay close to avoid his ranged attacks.</p>
+                        </div>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Godfrey-->
+                <div class="boss-card" data-boss-id="godfrey">
+                    <div class="boss-image">
+                        <img src="images/bosses/ER_Godfrey_First_Elden_Lord.jpg" alt="Godfrey, First Elden Lord" loading="lazy">
+                    </div>
+                    <div class="boss-info">
+                        <h3>Godfrey, First Elden Lord</h3>
+                        <div class="boss-details">
+                            <p><strong>Location:</strong> Leyndell, Ashen Capital</p>
+                            <p><strong>Health:</strong> 21,000</p>
+                            <p><strong>Rewards:</strong> Remembrance of Hoarah Loux</p>
+                        </div>
+                        <div class="boss-strategy">
+                            <h4>Strategy</h4>
+                            <p>Godfrey has two phases. In the first, he uses his axe and can be staggered. In the second, he becomes Hoarah Loux and uses grapples. Dodge his stomp attacks and punish when he's vulnerable.</p>
+                        </div>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Radagon -->
+                <div class="boss-card" data-boss-id="radagon-elden-beast">
+                    <div class="boss-image">
+                        <img src="images/bosses/Radagon-of-the-golden-order-boss-elden-ring-wiki-guide.jpg" alt="Radagon of the Golden Order / Elden Beast" loading="lazy">
+                    </div>
+                    <div class="boss-info">
+                        <h3>Radagon of the Golden Order / Elden Beast</h3>
+                        <div class="boss-details">
+                            <p><strong>Location:</strong> Erdtree</p>
+                            <p><strong>Health:</strong> 12,000 (Radagon), 22,000 (Elden Beast)</p>
+                            <p><strong>Rewards:</strong> Elden Remembrance</p>
+                        </div>
+                        <div class="boss-strategy">
+                            <h4>Strategy</h4>
+                            <p>Radagon is weak to fire and can be staggered. The Elden Beast is resistant to most damage types but weak to physical attacks. Use the Black Flame Tornado ash of war for high damage. Bring plenty of healing items.</p>
+                        </div>
+                        <a href="#" class="details-button">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map" class="map-section">
+        <div class="container">
+            <h2>Interactive Map</h2>
+            <div class="map-controls">
+                <div class="map-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="graces">Sites of Grace</button>
+                    <button class="filter-btn" data-filter="merchants">Merchants</button>
+                    <button class="filter-btn" data-filter="bosses">Bosses</button>
+                    <button class="filter-btn" data-filter="dungeons">Dungeons</button>
+                    <button class="filter-btn" data-filter="items">Items</button>
+                </div>
+                <div class="map-search">
+                    <input type="text" id="mapSearch" placeholder="Search locations...">
+                </div>
+            </div>
+            <div id="eldenRingMap" class="map-container"></div>
+            <div class="map-legend">
+                <h3>Legend</h3>
+                <div class="legend-items">
+                    <div class="legend-item"><i class="fas fa-cross"></i> Site of Grace</div>
+                    <div class="legend-item"><i class="fas fa-store"></i> Merchant</div>
+                    <div class="legend-item"><i class="fas fa-skull"></i> Boss</div>
+                    <div class="legend-item"><i class="fas fa-dungeon"></i> Dungeon</div>
+                    <div class="legend-item"><i class="fas fa-chest"></i> Item</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="underground" class="underground">
+        <div class="container">
+            <h2>Underground Areas</h2>
+            <div class="underground-tabs">
+                <button class="tab-btn active" data-tab="siofra">Siofra River</button>
+                <button class="tab-btn" data-tab="ainsel">Ainsel River</button>
+                <button class="tab-btn" data-tab="deeproot">Deeproot Depths</button>
+            </div>
+
+            
+            <div id="siofra" class="tab-content ">
+                <div class="area-map">
+                    <img src="images/maps/ER_Region_Map_Siofra_River.jpg" alt="Siofra River Map">
+                </div>
+                <div class="area-description">
+                    <h3>Siofra River</h3>
+                    <p>A vast underground river that flows beneath the Mistwood. This ancient place holds many secrets of the Eternal Cities and their connection to the stars.</p>
+                </div>
+            </div>
+
+            
+            <div id="ainsel" class="tab-content">
+                <div class="area-map">
+                    <img src="images/maps/ER_Region_Map_Ainsel_River.jpg" alt="Ainsel River Map">
+                </div>
+                <div class="area-description">
+                    <h3>Ainsel River</h3>
+                    <p>A mysterious underground river that leads to the ancient Eternal Cities. This area holds some of the most challenging encounters and valuable treasures.</p>
+                </div>
+                
+                <div class="sub-regions">
+                    <div class="region-card">
+                        <div class="region-image">
+                            <img src="images/maps/Eldenringnokstella.jpg" alt="Nokstella, Eternal City">
+                        </div>
+                        <div class="region-info">
+                            <h3>Nokstella, Eternal City</h3>
+                            <p>An ancient underground city that preserves the legacy of the Eternal Cities. Home to powerful enemies and valuable treasures.</p>
+                            <button class="region-btn" data-region="nokstella">Explore Nokstella</button>
+                        </div>
+                    </div>
+                    
+                    <div class="region-card">
+                        <div class="region-image">
+                            <img src="images/maps/ER_Nokron_Eternal_City.jpg" alt="Nokron, Eternal City">
+                        </div>
+                        <div class="region-info">
+                            <h3>Nokron, Eternal City</h3>
+                            <p>The fallen city of Nokron, sealed away after the war against the stars. Contains unique artifacts and challenging encounters.</p>
+                            <button class="region-btn" data-region="nokron">Explore Nokron</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div id="deeproot" class="tab-content">
+                <div class="area-map">
+                    <img src="images/maps/Deeproot-Depths.png" alt="Deeproot Depths Map">
+                </div>
+                <div class="area-description">
+                    <h3>Deeproot Depths</h3>
+                    <p>The deepest underground area of the Lands Between, where the roots of the Erdtree reach down into ancient ruins. A place of both beauty and danger.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logos/Footer-Art.jpg" alt="Elden Ring Logo">
+                    <h3>Elden Ring Guide</h3>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#weapons">Weapons</a></li>
+                            <li><a href="#armor">Armor</a></li>
+                            <li><a href="#bosses">Bosses</a></li>
+                            <li><a href="#npcs">NPCs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#map">Interactive Map</a></li>
+                            <li><a href="#underground">Underground Areas</a></li>
+                            <li><a href="#beginners">Beginner's Guide</a></li>
+                            <li><a href="#">Builds</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#"><i class="fab fa-discord"></i> Discord</a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                            <li><a href="#"><i class="fab fa-reddit"></i> Reddit</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elden Ring Guide. This is a fan-made website and is not affiliated with FromSoftware or Bandai Namco.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Weapon Details Modal -->
+    <div class="weapon-modal" id="weaponModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 class="weapon-title"></h2>
+                <span class="weapon-type"></span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="" alt="Weapon Image">
+                </div>
+                <div class="modal-details">
+                    <div class="weapon-stats-detailed">
+                        <h3>Weapon Stats</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-label">Physical Damage</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" data-stat="physical"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Magic Damage</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" data-stat="magic"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Fire Damage</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" data-stat="fire"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Lightning Damage</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" data-stat="lightning"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Holy Damage</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" data-stat="holy"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weapon-requirements">
+                        <h3>Requirements</h3>
+                        <div class="requirements-grid">
+                            <div class="req-item">
+                                <span class="req-label">Strength</span>
+                                <span class="req-value"></span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-label">Dexterity</span>
+                                <span class="req-value"></span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-label">Intelligence</span>
+                                <span class="req-value"></span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-label">Faith</span>
+                                <span class="req-value"></span>
+                            </div>
+                            <div class="req-item">
+                                <span class="req-label">Arcane</span>
+                                <span class="req-value"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weapon-scaling">
+                        <h3>Scaling</h3>
+                        <div class="scaling-grid"></div>
+                    </div>
+                    <div class="weapon-location">
+                        <h3>Location</h3>
+                        <p class="location-details"></p>
+                    </div>
+                    <div class="weapon-description-detailed">
+                        <h3>Description</h3>
+                        <p class="description-text"></p>
+                    </div>
+                    <div class="weapon-skill">
+                        <h3>Skill</h3>
+                        <p class="skill-details"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
