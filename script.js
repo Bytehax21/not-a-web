@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -39,7 +38,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabContents = document.querySelectorAll('.tab-content');
     const subRegions = document.querySelector('.sub-regions');
 
-                
+    // Add NPC ending tabs functionality
+    const endingTabs = document.querySelectorAll('.ending-tab');
+    const endingContents = document.querySelectorAll('.ending-content');
+
+    endingTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs and contents
+            endingTabs.forEach(t => t.classList.remove('active'));
+            endingContents.forEach(content => {
+                content.classList.remove('active');
+                content.style.display = 'none';
+            });
+
+            // Add active class to clicked tab
+            tab.classList.add('active');
+
+            // Show corresponding content
+            const endingId = tab.getAttribute('data-ending');
+            const activeContent = document.querySelector(`.ending-content[data-ending="${endingId}"]`);
+            if (activeContent) {
+                activeContent.classList.add('active');
+                activeContent.style.display = 'block';
+            }
+        });
+    });
+
+    // Activate first ending tab by default
+    if (endingTabs.length > 0) {
+        endingTabs[0].click();
+    }
+
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             tabButtons.forEach(btn => btn.classList.remove('active'));
@@ -65,6 +94,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const activeContent = document.querySelector('.tab-content.active');
     if (activeContent) {
         activeContent.style.display = 'block';
+    }
+
+    // Add beginners section tab functionality
+    const beginnersTabs = document.querySelectorAll('.beginners-tab');
+    const beginnersContents = document.querySelectorAll('.beginners-content');
+
+    function switchBeginnersTab(tabId) {
+        // Remove active class from all tabs and contents
+        beginnersTabs.forEach(tab => tab.classList.remove('active'));
+        beginnersContents.forEach(content => {
+            content.classList.remove('active');
+            content.style.display = 'none';
+        });
+
+        // Add active class to clicked tab
+        const activeTab = document.querySelector(`.beginners-tab[data-tab="${tabId}"]`);
+        if (activeTab) {
+            activeTab.classList.add('active');
+        }
+
+        // Show corresponding content
+        const activeContent = document.querySelector(`.beginners-content[data-tab="${tabId}"]`);
+        if (activeContent) {
+            activeContent.classList.add('active');
+            activeContent.style.display = 'block';
+        }
+    }
+
+    // Add click event listeners to beginners tabs
+    beginnersTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const tabId = tab.getAttribute('data-tab');
+            switchBeginnersTab(tabId);
+        });
+    });
+
+    // Activate first beginners tab by default
+    if (beginnersTabs.length > 0) {
+        const firstTabId = beginnersTabs[0].getAttribute('data-tab');
+        switchBeginnersTab(firstTabId);
     }
 
     const regionButtons = document.querySelectorAll('.region-btn');
