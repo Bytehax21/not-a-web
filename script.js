@@ -609,3 +609,16 @@ function initMap() {
 document.addEventListener('DOMContentLoaded', () => {
     initMap();
 }); 
+
+// Audio area 
+
+let lechatmusic = document.getElementById("bg-music");
+let clickButton = document.getElementById("cbx-51");
+
+clickButton.addEventListener("change", () => {
+    if (clickButton.checked) {
+      lechatmusic.play();
+    } else {
+        lechatmusic.pause();
+    }
+  });
