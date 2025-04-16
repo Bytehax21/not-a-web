@@ -7,6 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('active');
             menuToggle.classList.toggle('active');
         });
+
+        // Code so nav closes when clicked
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(link => {
+            link.addEventListener('click', () => {
+           
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
     }
 
     const filterButtons = document.querySelectorAll('.filter-btn');
