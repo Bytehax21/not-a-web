@@ -230,14 +230,54 @@ nav:hover {
     cursor: pointer;
     padding: 8px;
     transition: color 0.3s ease;
+    width: 40px;
+    height: 30px;
+    position: relative;
+    z-index: 1001;
 }
 
 .menu-toggle:hover {
     color: #fff;
 }
 
+.menu-toggle i {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    margin: 6px 0;
+}
+
+.menu-toggle i::before,
+.menu-toggle i::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle i::before {
+    top: -8px;
+}
+
+.menu-toggle i::after {
+    bottom: -8px;
+}
+
 .menu-toggle.active i {
-    transform: rotate(90deg);
+    background-color: transparent;
+}
+
+.menu-toggle.active i::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active i::after {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 
@@ -2144,9 +2184,8 @@ footer {
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 80px;
         left: 0;
         right: 0;
         background: var(--darker-bg);
@@ -2155,25 +2194,50 @@ footer {
         align-items: center;
         gap: 1rem;
         border-bottom: 2px solid var(--accent-color);
+        transform: translateY(-150%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
     }
 
     .nav-links.active {
-        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-links li {
         width: 100%;
         text-align: center;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
     }
+
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links li:nth-child(2) { transition-delay: 0.2s; }
+    .nav-links li:nth-child(3) { transition-delay: 0.3s; }
+    .nav-links li:nth-child(4) { transition-delay: 0.4s; }
+    .nav-links li:nth-child(5) { transition-delay: 0.5s; }
+    .nav-links li:nth-child(6) { transition-delay: 0.6s; }
+    .nav-links li:nth-child(7) { transition-delay: 0.7s; }
+    .nav-links li:nth-child(8) { transition-delay: 0.8s; }
 
     .nav-links a {
         padding: 0.5rem;
         width: 100%;
         display: block;
+        transition: background-color 0.3s ease;
     }
 
     .nav-links a:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 215, 0, 0.1);
     }
     
     .menu-toggle {
@@ -3082,7 +3146,7 @@ body {
     }
 }
 
-/* Beginners Section Styles */
+
 .beginners {
     padding: 4rem 0;
     background: var(--dark-bg);
